@@ -34,6 +34,7 @@ $compress = for($i=0;$i -eq 100;$i++) {
 
 $result = $compress | Measure-Object -Property TotalMilliseconds -Average -Maximum -Minimum
 
+Write-Host $result
 Write-Host "Finished compression test"
 
 #endregion
@@ -49,3 +50,6 @@ Remove-Item -Path $TestFile -Force
 #endregion
 
 Write-Host $result
+Write-Host "????"
+
+
