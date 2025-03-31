@@ -23,6 +23,8 @@ $memInfo = Get-CIMInstance Win32_OperatingSystem | Select-Object -Property @{Nam
 
 #region CompressionTest
 
+Write-Host "Starting compression test"
+
 # 100 runs of compressing the file
 $compress = for($i=0;$i -eq 100;$i++) {
     Measure-Command {
@@ -32,6 +34,7 @@ $compress = for($i=0;$i -eq 100;$i++) {
 
 $result = $compress | Measure-Object -Property TotalMilliseconds -Average -Maximum -Minimum
 
+Write-Host "Finished compression test"
 
 #endregion
 
